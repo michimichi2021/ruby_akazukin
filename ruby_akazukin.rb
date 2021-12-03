@@ -1,6 +1,6 @@
-scene = "first"
+topic = "first"
 while true
-  case scene
+  case topic
   when 'first'
     puts '今からおばあさんの家にお使いに行きます。いきなり3つの道に分かれました！どの道を選びますか?'
     puts "1.左の道"
@@ -9,18 +9,18 @@ while true
     input = gets
     case input.to_i
     when 1
-      scene = "left"
+      topic = "left"
     when 2
-      scene = "center"
+      topic = "center"
     when 3
-      scene = "right"
+      topic = "right"
     end
   when "left"
     puts "左の道を歩いた"
     puts "綺麗な女性に出会ってリンゴをもらいました。"
     puts "リンゴを食べたら毒りんごでした。"
     puts "GAME OVER"
-    exit
+    break
   when "center"
     puts "真ん中の道を歩いた。"
     puts "分かれ道が表れました！"
@@ -29,20 +29,20 @@ while true
     input = gets
     case input.to_i
     when 1
-      scene = "leave"
+      topic = "leave"
     when 2
-      scene = "end"
+      topic = "end"
     end
   when "right"
     puts "歩き続けたら、もとの場所にもどった。"
-    scene = "first"
+    topic = "first"
   when "leave"
     puts "狼に遭遇して食べられました。"
     puts "GAME OVER"
-    exit
+    break
   when "end"
     puts "森をこえました"
     puts "おばあちゃんが家のまえで待っていました"
-    exit
+    break
   end
 end
